@@ -1,5 +1,7 @@
 using FFTW
 using PyPlot
+using Trapz
+using Statistics
 
 # Constants from Table 1 (Parameters of synthetic magnetic field variation)
 A =   [200, 90, 30, 17, 8, 3.5, 1]
@@ -61,19 +63,73 @@ end
 
 
 
+
+
+
+
+
+
+
+function fourier_series(t, x, f0, ks)
+	unused, ak, bk, fs = fsc(t, x, f0, ks)
+	f = (ak - 1im * bk) / sqrt(2)
+	return f, fs
+end
+
+function fsc(t, x, f0, ks)
+	ak = zeros(1, length(ks))
+	bk = zeros(1, length(ks))
+
+	T = maximum(t) - minimum(t)
+	w0 = 2*pi*f0
+	fs = f0*ks
+
+	for n in 1:length(ks)
+		println(n / length(ks) * 100)
+
+		k = ks[n]
+
+		ak[n] = 2 * trapz(t, x.*cos.(k*w0*t))/T
+		ak[n] = 2 * trapz(t, x.*sin.(k*w0*t))/T
+
+	end
+	return f0, ak, bk, fs
+end
+
+
+function phasor(t, x, f)
+	xh, unused = fourier_series(t, x, f, 1)
+	return xh
+end
+
+
+
+
 timestep = 1 # n second timestep
 
-X = 0:timestep:86400 # 1 day, with a timestep from above
+X = 1:timestep:86400 # 1 day, with a timestep from above
+X = vcat(X...)
+
 Y = B.(X) # Figure 6
 
 freq = fftfreq(length(Y), timestep)
 
 conv = K.(freq) .* fft(Y)
 
-inverse = ifft(conv)
+
+println(
+	phasor(X, Y, 1e-3)
+)
+
+
+
+
+
+
+
+
+
+#inverse = ifft(conv)
 
 # plot(X, real.(inverse))
-
-
-
-println(abs(E(1e-4)))
+# println(abs(E(1e-4)))
