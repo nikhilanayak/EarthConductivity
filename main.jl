@@ -3,6 +3,8 @@ using PyPlot
 using Trapz
 using Statistics
 
+
+
 # Constants from Table 1 (Parameters of synthetic magnetic field variation)
 A =   [200, 90, 30, 17, 8, 3.5, 1]
 Phi = [10, 20, 30, 40, 50, 60, 70]
@@ -69,12 +71,12 @@ end
 
 
 
-
 function fourier_series(t, x, f0, ks)
-	unused, ak, bk, fs = fsc(t, x, f0, ks)
-	f = (ak - 1im * bk) / sqrt(2)
+	_, ak, bk, fs = fsc(t, x, f0, ks)
+	f = (ak - 1im * bk)
 	return f, fs
 end
+
 
 function fsc(t, x, f0, ks)
 	ak = zeros(1, length(ks))
@@ -85,8 +87,6 @@ function fsc(t, x, f0, ks)
 	fs = f0*ks
 
 	for n in 1:length(ks)
-		println(n / length(ks) * 100)
-
 		k = ks[n]
 
 		ak[n] = 2 * trapz(t, x.*cos.(k*w0*t))/T
@@ -98,11 +98,9 @@ end
 
 
 function phasor(t, x, f)
-	xh, unused = fourier_series(t, x, f, 1)
-	return xh
+	xh, _ = fourier_series(t, x, f, 1)
+	return xh[1]
 end
-
-
 
 
 timestep = 1 # n second timestep
@@ -117,19 +115,6 @@ freq = fftfreq(length(Y), timestep)
 conv = K.(freq) .* fft(Y)
 
 
-println(
-	phasor(X, Y, 1e-3)
-)
 
-
-
-
-
-
-
-
-
-#inverse = ifft(conv)
-
-# plot(X, real.(inverse))
-# println(abs(E(1e-4)))
+#println(abs(phasor(X, Y, 0.00009259)))
+println(abs(phasor(X, Y, 0.00020833)))
