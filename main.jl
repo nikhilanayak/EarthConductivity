@@ -103,6 +103,42 @@ function phasor(t, x, f)
 end
 
 
+
+
+function K(layer)
+	sigma = 1000
+	mu = 4* pi * 10e-7 # µ0 = 4π · 10−7 H/m	
+
+
+	if layer == 5
+		fn(f) = sqrt((1im * 2 * pi * f)/(4 * pi * mu * sigma))
+		return fn
+	end
+	
+	k(f) = sqrt(1im * 2 * pi  * f * sigma * mu)
+	nn(f) = 1im * 2 * pi * f / k(f)
+
+	KnPrev = K(layer + 1)
+
+	l = 100 # what should this be???
+
+	eEquation(f) = e ^ (-2 * k(f) * l)
+
+
+	Kn(f) = nn(f) * (KnPrev(f) * (1 + eEquation(f)) + nn(f) * (1 - eEquation(f))) /
+		(KnPrev(f) * (1 - eEquation(f)) + nn(f) * (1 + eEquation(f)))
+
+	return Kn
+
+
+end
+
+
+
+
+
+
+
 timestep = 1 # n second timestep
 
 X = 1:timestep:86400 # 1 day, with a timestep from above
