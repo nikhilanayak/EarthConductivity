@@ -1,10 +1,11 @@
 Ls = [15, 10, 125, 200]
 res = [20000, 200, 1000, 100]
-Sigmas = [0, 0, 0, 0, 0]
+Sigmas = [1, 1, 1, 1, 1]
 
 N = 5 # num layers
 
 mu = 4 * pi * 10^-7
+i = 1im
 
 
 function K_N(f)
@@ -38,3 +39,8 @@ function K(n, f)
 	
 	return eta(n, f) * num / den
 end
+
+
+println(
+	K(1, 1)
+)
