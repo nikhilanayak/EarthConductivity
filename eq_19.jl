@@ -1,6 +1,7 @@
 Ls = [15, 10, 125, 200]
 res = [20000, 200, 1000, 100]
-Sigmas = [1, 1, 1, 1, 1]
+#Sigmas = [1, 1, 1, 1, 1]
+Sigmas = [1/20000, 1/200, 1/1000, 1/100, 1/3]
 
 N = 5 # num layers
 
@@ -27,6 +28,7 @@ function eExpression(n, f)
 end
 
 function K(n, f)
+	#println("in layer ", n)
 	if n == N
 		return K_N(f)
 	end
