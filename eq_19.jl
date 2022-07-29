@@ -1,7 +1,14 @@
 Ls = [15, 10, 125, 200]
+using Printf
+
+Ls = [15, 10, 125, 200]*1e3
 res = [20000, 200, 1000, 100]
 #Sigmas = [1, 1, 1, 1, 1]
 Sigmas = [1/20000, 1/200, 1/1000, 1/100, 1/3]
+
+# Sigmas[end] = 1/1000 # testing with half-space model
+
+
 
 N = 5 # number of layers in the model
 
@@ -42,8 +49,14 @@ function K(n, f) # Equation 19
 	return eta(n, f) * num / den
 end
 
-
-Kf = K(1, 0.025)
+# The 1000x scaling factor is just units
+# 1 mV/(km*nT) = 1000 V/(m*T)
+# so your calculations are fine!
+Kf = K(length(Sigmas), 0.025)/1e3 
+Kf = K(1, 0.025)/1e3 
+Kf = K(1, 0.000093)/1e3
+Kf = K(1, 0.001111)/1e3 
 
 println(abs(Kf))
 println(angle(Kf)*180/pi)
+@printf("Mag: %0.4f, Angle: %0.2f\n", abs(Kf), angle(Kf)*180/pi)
