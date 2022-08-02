@@ -24,6 +24,7 @@ function B(t) # Equation (20)
 	return y
 end
 
+
 function dBdT(t)
 	y = 0
 	for i in 1:7
@@ -34,9 +35,6 @@ function dBdT(t)
 	end
 	return y
 end
-
-
-
 
 
 function K(x) # Equation (13)
@@ -56,19 +54,11 @@ function C(x)
 	return K(x) / (i * 2 * pi * x)
 end
 
+
 function E(x)
 	#return C(x) * dBdT(x)
 	return K(x) * B(x)
 end
-
-
-
-
-
-
-
-
-
 
 
 function fourier_series(t, x, f0, ks)
@@ -90,7 +80,7 @@ function fsc(t, x, f0, ks)
 		k = ks[n]
 
 		ak[n] = 2 * trapz(t, x.*cos.(k*w0*t))/T
-		ak[n] = 2 * trapz(t, x.*sin.(k*w0*t))/T
+		bk[n] = 2 * trapz(t, x.*sin.(k*w0*t))/T
 
 	end
 	return f0, ak, bk, fs
@@ -104,53 +94,23 @@ end
 
 
 
-
-function K(layer)
-	sigma = 1000
-	mu = 4* pi * 10e-7 # µ0 = 4π · 10−7 H/m	
-
-
-	if layer == 5
-		fn(f) = sqrt((1im * 2 * pi * f)/(4 * pi * mu * sigma))
-		return fn
-	end
-	
-	k(f) = sqrt(1im * 2 * pi  * f * sigma * mu)
-	nn(f) = 1im * 2 * pi * f / k(f)
-
-	KnPrev = K(layer + 1)
-
-	l = 100 # what should this be???
-
-	eEquation(f) = e ^ (-2 * k(f) * l)
-
-
-	Kn(f) = nn(f) * (KnPrev(f) * (1 + eEquation(f)) + nn(f) * (1 - eEquation(f))) /
-		(KnPrev(f) * (1 - eEquation(f)) + nn(f) * (1 + eEquation(f)))
-
-	return Kn
-
-
-end
-
-
-
-
-
-
-
 timestep = 1 # n second timestep
 
 X = 1:timestep:86400 # 1 day, with a timestep from above
-X = vcat(X...)
+# X = vcat(X...)
 
 Y = B.(X) # Figure 6
 
 freq = fftfreq(length(Y), timestep)
 
-conv = K.(freq) .* fft(Y)
+# conv = K.(freq) .* fft(Y)
 
 
+plot(freq, abs.(fft(Y)))
+
+#plot(X, Y)
+#xlabel("Time (Seconds)")
+#ylabel("Synthetic Field Variation nT)")
 
 #println(abs(phasor(X, Y, 0.00009259)))
-println(abs(phasor(X, Y, 0.00020833)))
+#println(abs(phasor(X, Y, 0.00020833)))
