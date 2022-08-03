@@ -4,7 +4,7 @@ using Printf
 function help()
 	@printf("Run like so: julia %s [recreate|load]\n", PROGRAM_FILE)
 	println("- recreate: recreates the data from the Boteler 2019 Paper")
-	println("- load [FILE]: loads [FILE] as a CSV file and uses the data as input to the transfer function. Uses \"data\" as the column name to read. Writes to stdout")
+	println("- load [FILE]: loads [FILE] as a FSIM file and uses the data as input to the transfer function. Writes data as CSV to stdout. If you don't have a FSIM file, try out data.txt")
 
 	exit(-1)
 end
@@ -14,7 +14,7 @@ if length(ARGS) == 0
 	help()
 	end
 
-
+ 
 
 using PyPlot
 using CSV
@@ -68,8 +68,9 @@ end
 
 
 if ARGS[1] == "recreate"
-	println("Table 4. Magnetotelluric relation C(f) for the frequencies in the
-synthetic test magnetic field variation for a 1000 Ωm uniform Earth.")
+  println("Table 3. Transfer function K(f) for the frequencies in the synthetic test
+magnetic field variation for a multi-layer Earth (5-layer Québec model).")
+
 	
 	freqs = [0.000093, 0.000208, 0.000476, 0.001111, 0.002381, 0.005556, 0.025] 
 
@@ -112,17 +113,26 @@ end
 if ARGS[1] == "load"
 	file = ARGS[2]
 
-	reader = CSV.File(file)
-	
-	println("x amplitude phase")
-	for row in reader
-		#println(row)
-		X = row.data
+	reader = readlines(file)
+
+	println("col x amplitude phase")
+
+	ind = 0
+	for line in reader
+    if startswith(line, "#")
+      continue
+    end
+    global ind += 1
+
+    cols = split(line, " ")
+    X = parse(Float64, cols[2])
+
+
 		res = K(1, X) / 1e3
 		amp = abs(res)
 		phas = angle(res) * 180 / pi
 
-		@printf("%.3f, %.3f, %.3f\n", X, amp, phas)
+		@printf("%d, %.3f, %.3f, %.3f\n", ind, X, amp, phas)
 	end
 
 

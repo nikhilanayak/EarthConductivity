@@ -106,11 +106,11 @@ freq = fftfreq(length(Y), timestep)
 # conv = K.(freq) .* fft(Y)
 
 
-plot(freq, abs.(fft(Y)))
+#plot(freq, abs.(fft(Y)))
 
-#plot(X, Y)
-#xlabel("Time (Seconds)")
-#ylabel("Synthetic Field Variation nT)")
+plot(X, Y)
+xlabel("Time (Seconds)")
+ylabel("Synthetic Field Variation (nT)")
 
 #println(abs(phasor(X, Y, 0.00009259)))
 #println(abs(phasor(X, Y, 0.00020833)))
