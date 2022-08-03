@@ -15,17 +15,7 @@ This repository contains a Julia implementation of the Quebec 5-layer Earth mode
 ## How To Run
 To run, the Julia programming language is required. Install instructions can be found [here](https://julialang.org/downloads/).
 
-Additionally, the following Julia packages are required: 
-- PyPlot
-- CSV
-- FFTW
-- Trapz
-Each packaged can be installed using the following instructions:
-1. Open the Julia interpreter: type in `julia` in your terminal
-2. Press the `]` key
-3. For each of the packages above, type in `Add [NAME]` to add that package (where \[NAME\] is the name of your package) 
+Then, install the required libraries using the following line in the terminal: `julia install.jl`
 
-
-After all packages are downloaded, the main program can be run using the following command:
 `julia program.jl [ARGS]`
 If run without any args, the program will display a help menu.
