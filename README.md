@@ -13,7 +13,7 @@ This repository contains a Julia implementation of the Quebec 5-layer Earth mode
 
 
 ## How To Run
-To run, the Julia programming language is required. Install instructions can be found [here](https://julialang.org/downloads/).
+To run, the Julia programming language is required. Install by running the following command in the terminal: `sudo apt install julia`
 
 Then, install the required libraries using the following line in the terminal: `julia install.jl`
 
