@@ -2,7 +2,7 @@ using FFTW
 using PyPlot
 using Trapz
 using Statistics
-
+using Printf
 
 
 # Constants from Table 1 (Parameters of synthetic magnetic field variation)
@@ -103,14 +103,26 @@ Y = B.(X) # Figure 6
 
 freq = fftfreq(length(Y), timestep)
 
+
+freqs = [0.000093, 0.000208, 0.000476, 0.001111, 0.002381, 0.005556, 0.025] 
+
+iter = 0
+for freq in freqs
+  global iter = iter + 1
+  res = phasor(X, Y, freq)
+  @printf("%.4f, amp: %.3f, phase: %.3f\n", freq, abs(res), angle(res))
+
+end
+
+
 # conv = K.(freq) .* fft(Y)
 
 
 #plot(freq, abs.(fft(Y)))
 
-plot(X, Y)
-xlabel("Time (Seconds)")
-ylabel("Synthetic Field Variation (nT)")
+#plot(X, Y)
+#xlabel("Time (Seconds)")
+#ylabel("Synthetic Field Variation (nT)")
 
 #println(abs(phasor(X, Y, 0.00009259)))
 #println(abs(phasor(X, Y, 0.00020833)))

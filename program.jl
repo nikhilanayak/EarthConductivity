@@ -142,8 +142,6 @@ help()
 
 
 
-
-
 # The 1000x scaling factor is just units
 # 1 mV/(km*nT) = 1000 V/(m*T)
 # so your calculations are fine!
