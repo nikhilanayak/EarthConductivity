@@ -19,3 +19,6 @@ Then, install the required libraries using the following line in the terminal: `
 
 `julia program.jl [ARGS]`
 If run without any args, the program will display a help menu.
+
+## Latex Not Compiling?
+If the LaTeX isn't compiling, try the Overleaf [Link](https://www.overleaf.com/read/dxgykgwgnyfr).
