@@ -38,6 +38,7 @@ To plot the CSV, run the plotter using python3:
 ```
 python3 plot.py
 ```
+The plot should be the same as the plotted figure from the transfer function in the paper.
 
 ## Compiling Paper
 ```
