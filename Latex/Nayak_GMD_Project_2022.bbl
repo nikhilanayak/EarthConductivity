@@ -1,0 +1,214 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{8859181}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f0819fe6e6ee07386d664932ab0b79a4}{%
+           family={Boteler},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cdcd720440773c1e49e92fd54f4b6a86}{%
+           family={Pirjola},
+           familyi={P\bibinitperiod},
+           given={Risto\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0457c22de022a5217bb7a5f6045ee2fb}{%
+           family={Marti},
+           familyi={M\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f87b62809fb7e52d59334a4b313d80c}
+      \strng{fullhash}{1f87b62809fb7e52d59334a4b313d80c}
+      \strng{bibnamehash}{1f87b62809fb7e52d59334a4b313d80c}
+      \strng{authorbibnamehash}{1f87b62809fb7e52d59334a4b313d80c}
+      \strng{authornamehash}{1f87b62809fb7e52d59334a4b313d80c}
+      \strng{authorfullhash}{1f87b62809fb7e52d59334a4b313d80c}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Analytic Calculation of Geoelectric Fields Due to Geomagnetic Disturbances: A Test Case}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{pages}{147029\bibrangedash 147037}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2945530
+      \endverb
+    \endentry
+    \entry{ieee_xplore}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Xplore}
+      \field{title}{Calculation of induced electric field during a geomagnetic storm using recursive convolution}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6766269/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6766269/
+      \endverb
+    \endentry
+    \entry{garner_2015}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8d229fbde7395c6974420e4025b24ead}{%
+           family={Garner},
+           familyi={G\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {NASA}%
+      }
+      \strng{namehash}{8d229fbde7395c6974420e4025b24ead}
+      \strng{fullhash}{8d229fbde7395c6974420e4025b24ead}
+      \strng{bibnamehash}{8d229fbde7395c6974420e4025b24ead}
+      \strng{authorbibnamehash}{8d229fbde7395c6974420e4025b24ead}
+      \strng{authornamehash}{8d229fbde7395c6974420e4025b24ead}
+      \strng{authorfullhash}{8d229fbde7395c6974420e4025b24ead}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NASA}
+      \field{month}{3}
+      \field{title}{Solar storm and space weather - frequently asked questions}
+      \field{year}{2015}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.nasa.gov/mission_pages/sunearth/spaceweather/index.html
+      \endverb
+      \verb{url}
+      \verb https://www.nasa.gov/mission_pages/sunearth/spaceweather/index.html
+      \endverb
+    \endentry
+    \entry{nasa}{misc}{}
+      \list{publisher}{1}{%
+        {NASA}%
+      }
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NASA}
+      \field{title}{Geomagnetically induced currents (gics)}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.jpl.nasa.gov/infographics/geomagnetically-induced-currents-gics
+      \endverb
+      \verb{url}
+      \verb https://www.jpl.nasa.gov/infographics/geomagnetically-induced-currents-gics
+      \endverb
+    \endentry
+    \entry{new_scientist_1989}{misc}{}
+      \list{publisher}{1}{%
+        {New Scientist}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{New Scientist}
+      \field{month}{6}
+      \field{title}{New theory to explain 'cold fusion'}
+      \field{year}{1989}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.newscientist.com/article/mg12216702-000-new-theory-to-explain-cold-fusion/
+      \endverb
+      \verb{url}
+      \verb https://www.newscientist.com/article/mg12216702-000-new-theory-to-explain-cold-fusion/
+      \endverb
+    \endentry
+    \entry{rbb}{proceedings}{}
+      \name{author}{2}{}{%
+        {{hash=085d00767955a8c90e3d5bb9fb0174c2}{%
+           family={Rix},
+           familyi={R\bibinitperiod},
+           given={Brian\bibnamedelima C.},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=497cf5d5d202f9faaa49cea1c1dba6fa}{%
+           family={Boteler},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{009145ae3377824eaa250ee506a8c22b}
+      \strng{fullhash}{009145ae3377824eaa250ee506a8c22b}
+      \strng{bibnamehash}{009145ae3377824eaa250ee506a8c22b}
+      \strng{authorbibnamehash}{009145ae3377824eaa250ee506a8c22b}
+      \strng{authornamehash}{009145ae3377824eaa250ee506a8c22b}
+      \strng{authorfullhash}{009145ae3377824eaa250ee506a8c22b}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{03}
+      \field{series}{NACE CORROSION}
+      \field{title}{{Telluric Current Considerations in the CP Design for the Maritimes and Northeast Pipeline}}
+      \field{volume}{All Days}
+      \field{year}{2001}
+      \true{nocite}
+    \endentry
+    \entry{sciencedaily_2017}{misc}{}
+      \list{publisher}{1}{%
+        {ScienceDaily}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ScienceDaily}
+      \field{month}{2}
+      \field{title}{Scientist studies whether solar storms cause animal beachings}
+      \field{year}{2017}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.sciencedaily.com/releases/2017/02/170206083827.htm
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedaily.com/releases/2017/02/170206083827.htm
+      \endverb
+    \endentry
+    \entry{noaa_national_centers_for_environmental_information_ncei_2005}{misc}{}
+      \list{publisher}{1}{%
+        {U.S. Department of Commerce}%
+      }
+      \field{sortinit}{U}
+      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NOAA National Centers for Environmental Information (NCEI)}
+      \field{month}{12}
+      \field{title}{USDOC/NOAA/NESDIS/NGDC}
+      \field{year}{2005}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ngdc.noaa.gov/sxi/sxi_greatest.html
+      \endverb
+      \verb{url}
+      \verb https://www.ngdc.noaa.gov/sxi/sxi_greatest.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -13,12 +13,35 @@ This repository contains a Julia implementation of the Quebec 5-layer Earth mode
 
 
 ## How To Run
-To run, the Julia programming language is required. Install by running the following command in the terminal: `sudo snap install julia --classic`
+To run, the Julia programming language is required. Install by running the following command in the terminal: 
+```
+sudo snap install julia --classic
+```
 
-Then, install the required libraries using the following line in the terminal: `julia install.jl`
+Then, install the required libraries using the following line in the terminal: 
+```
+julia install.jl
+```
 
-`julia program.jl [ARGS]`
-If run without any args, the program will display a help menu.
+Run the example dataset:
+```
+julia transfer_sim.jl load data.txt > out.csv
+```
 
-## Latex Not Compiling?
-If the LaTeX isn't compiling, try the Overleaf [Link](https://www.overleaf.com/read/dxgykgwgnyfr).
+or view the help menu:
+```
+julia transfer_sim.jl
+```
+
+
+To plot the CSV, run the plotter using python3:
+```
+python3 plot.py
+```
+
+## Compiling Paper
+```
+cd Latex
+./build.sh
+```
+or view the precompiled pdf in the base directory.
