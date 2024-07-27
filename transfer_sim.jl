@@ -115,7 +115,7 @@ if ARGS[1] == "load"
 
 	reader = readlines(file)
 
-	println("col x amplitude phase")
+	println("col,x,amplitude,phase")
 
 	ind = 0
 	for line in reader
@@ -139,8 +139,6 @@ if ARGS[1] == "load"
 	exit(0)
 end
 help()
-
-
 
 # The 1000x scaling factor is just units
 # 1 mV/(km*nT) = 1000 V/(m*T)
