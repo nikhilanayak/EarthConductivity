@@ -10,7 +10,6 @@
   <a href="#abstract">Introduction</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#paper">Paper</a> •
-  <a href="#training-figures">Training Figures</a> •
   <a href="#related-work">Related Work</a> •
   <a href="#support">Support</a> •
   <a href="#credits">Credits</a>
